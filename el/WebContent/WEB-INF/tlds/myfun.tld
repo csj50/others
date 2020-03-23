@@ -1,0 +1,17 @@
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance
+    http://www.springmodules.org/schema/cache/springmodules-cache.xsd
+    http://www.springmodules.org/schema/cache/springmodules-ehcache.xsd"  
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"  
+    version="2.1">
+	<tlib-version>1.0</tlib-version>
+	<short-name>mfun</short-name>
+	<uri>http://com.test.functions/myfun</uri>
+	<function>
+		<name>hi</name>
+		<function-class>com.test.functions.MyFun</function-class>
+		<function-signature>
+			java.lang.String hi(java.lang.String)
+		</function-signature>
+	</function>
+</taglib>
