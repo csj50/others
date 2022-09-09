@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				alert($("#ID").val());  //根据id选择
+				alert($("a").html());  //查找a标签
+				alert($(".classname").val());  //查找class等于classname的所有元素
+				alert($("*").length);  //查找页面上所有元素，共8个，所有开标签
+				alert($("input,a").length);  //查找input元素和a元素，返回组合
+				
+			});
+		</script>
+	</head>
+	<body>
+		<input type="text" id="ID" value="根据ID选择" />
+		<a>根据元素名称选择</a>
+		<input type="text" class="classname" value="根据元素css类名选择" />
+	</body>
+</html>

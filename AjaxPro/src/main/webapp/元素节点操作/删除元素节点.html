@@ -1,0 +1,62 @@
+<html>
+	<head>
+	<title>remove()、detach()、empty()方法</title>
+		<style type="text/css">
+			p{
+				font-size:14px;
+				margin:0px;
+				padding:5px;
+			}
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			/*
+			$(function(){
+				$("p").click(function(){
+					alert("hello p");
+				});
+				$("input").click(function(){
+					//删除p元素，返回被删除的对象
+					var $removed=$("p").remove();
+					//将p元素插入到h2标签之后
+					$("h2").after($removed);
+					//删除后p的点击事件没了
+				});
+			});
+			*/
+			
+			/*
+			$(function(){
+				$("p").click(function(){
+					alert("hello p");
+				});
+				$("input").click(function(){
+					//删除p元素，返回被删除的对象
+					var $removed=$("p").detach();
+					//将p元素插入到h2标签之后
+					$("h2").after($removed);
+					//删除后p的点击事件还在
+				});
+			});
+			*/
+			
+			$(function(){
+				$("p").click(function(){
+					alert("hello p");
+				});
+				$("input").click(function(){
+					//没有删除p元素<p></p>，而是清空了p元素的内容
+					$("p").empty();
+				});
+			});
+			
+		</script>
+	</head>
+	
+	<body>
+		<p>从前有一只大恐龙...</p>
+		<input type="button" value="点击我" />
+		<h2>在树林里面跑啊跑...</h2>
+	</body>
+</html>

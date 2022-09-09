@@ -1,0 +1,49 @@
+<html>
+	<head>
+	<title>解除绑定事件</title>
+		<style type="text/css">
+			* {margin:0; padding:0; }
+			body {font-size:13px; line-height:130%; padding:60px; }
+			p {width:200px; background:#888; color:white; height:16px; }
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//一个元素可以绑定多个事件
+				$("#btn").bind("click",myfun1=function(){  //指定函数名称
+					$("#test").append("<p>我的绑定函数1-click</p>");
+				}).bind("mouseout",myfun2=function(){
+					$("#test").append("<p>我的绑定函数2-mouseout</p>");
+				}).bind("click",myfun3=function(){
+					$("#test").append("<p>我的绑定函数3-click</p>");
+				});
+				
+				//解除绑定
+				$("#del1").click(function(){
+					//找到这个按钮
+					$("#btn").unbind();
+					//删除之后，再点btn不会有事件绑定！！！相当于bind的代码没有了
+				})
+				
+				$("#del2").click(function(){
+					$("#btn").unbind("mouseout");
+				})
+				
+				$("#del3").click(function(){
+					//删除具有myfun1这个指定函数的click事件
+					$("#btn").unbind("click",myfun1);
+				})
+			});
+			
+		</script>
+	</head>
+	
+	<body>
+		<button id="btn">点击我</button>
+		<div id="test"></div>
+		<button id="del1">删除所有事件</button>
+		<button id="del2">删除指定的事件</button>
+		<button id="del3">删除具有指定处理函数的事件</button>
+	</body>
+</html>

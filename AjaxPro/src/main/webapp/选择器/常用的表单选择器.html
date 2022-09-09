@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				alert($(":input").length);  //15个，不包含img标签
+				alert($(":text").length);  //单行文本框
+				alert($(":password").length);  //密码文本框
+				alert($(":radio").val());  //单选按钮
+				alert($(":checkbox").val());  //复选框
+				alert($(":submit").val());  //提交按钮
+				alert($(":reset").val());  //重置按钮
+				alert($(":image").length);  //图片按钮，不是图片框
+				alert($(":button").length);  //普通按钮
+				alert($(":file").length);  //文件域
+				
+			});
+		</script>
+	</head>
+	<body>
+		<form name="myform">
+			<input type="button" value="Input Button" /><br/>
+			<input type="checkbox" value="footbail" /><br/>
+			<input type="file" name="upload" /><br/>
+			<input type="hidden" value="ok" /><br/>
+			<input type="image" src="a.jpg" /><br/>
+			<input type="password" name="pass" value="111" /><br/>
+			<input type="radio" value="male"/>male<br/>
+			<input type="reset" value="重置" /><br/>
+			<input type="submit" value="提交" /><br/>
+			<input type="text" name="name" value="chenhao" /><br/>
+			<input type="text" name="age" value="age" /><br/>
+			<select>
+				<option>Option1</option>
+				<option>Option2</option>
+			</select><br/>
+			<textarea cols="10" rows="5">多行文本框</textarea><br/>
+			<button type="button">Button</button><br/>
+			<input type="image" src="b.jpg" /><br/>
+			<img src="b.jpg" />
+		</form>
+	</body>
+</html>

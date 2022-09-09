@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			//原始
+			//jQuery(document).ready(function (){
+			//缩写
+			//$(document).ready(function (){
+			//再缩写
+			$(function (){
+				/*
+				var span=document.getElementById("show").firstChild.nextSibling;
+				alert(span.innerHTML);
+				//把DOM对象转成jQuery对象
+				alert($(span).html());
+				*/
+				
+				//查询span元素，返回一个数组
+				var $span = $("span");  //变量名称加$，是为了一看就知道是jQuery对象
+				alert($span.html());  //默认获取第一个span
+				alert($span[1].innerHTML); //转换成DOM对象，取第2个
+				alert($span.get(2).innerHTML); //转换成DOM对象，取第3个
+				
+			});
+		</script>
+	</head>
+	<body>
+		<div id="show">
+			<span>要显示的内容1</span>
+			<span>要显示的内容2</span>
+			<span>要显示的内容3</span>
+		</div>
+	</body>
+</html>

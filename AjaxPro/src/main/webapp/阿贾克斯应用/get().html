@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test get()</title>
+
+<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("input:eq(2)").click(function(){
+			$.get(
+				//url
+				"GetServlet", 
+				//data
+				{'username':encodeURI(encodeURI($("#username").val())),
+				 'password':encodeURI(encodeURI($("#password").val()))}, 
+				//callback
+				function(data,textStatus){
+					alert(textStatus);
+					//插入服务端传回来的数据
+					$("#content").html(data);
+				}, 
+				//type
+				"html"
+				);
+		});
+	})
+</script>
+
+</head>
+<body>
+	<input type="text" name="username" id="username" /><br/>
+	<input type="password" name="password" id="password" /><br/>
+	<input type="button" value="login" />
+	<div id="content"></div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+	<head>
+	<title>filter()方法</title>
+		<style type="text/css">
+			div{
+				margin:5px;
+				padding:5px;
+				text-align:center;
+				height:40px;
+				width:40px;
+				float:left
+			}
+			.myClass1{
+				background:#fcff9f;
+			}
+			.myClass2{
+				border:2px solid #000000;
+			}
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				/*
+				//给所有的div元素添加类选择器，样式
+				$("div").addClass("myClass1");
+				//过滤div元素集合里的元素，class属性包含middle
+				var divs=$("div").filter("[class*=middle]");
+				//再给过滤出的div元素添加类选择器，样式
+				divs.addClass("myClass2");
+				*/
+				
+				//链式操作
+				//$("div").addClass("myClass1").filter("[class*=middle]").addClass("myClass2");
+				
+				//filter里面函数作为参数，让用户自定义筛选函数，对于返回值为true的元素保留，否则就去除
+				$("div").addClass("myClass1").filter(function(index){
+					//index是元素集合里的下标
+					return index==1||index==3;  //保留下标为1和3的那个
+				}).addClass("myClass2");
+				
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div></div>
+		<div class="middle"></div>
+		<div class="middle"></div>
+		<div class="middle"></div>
+		<div class="middle"></div>
+		<div></div>
+	</body>
+</html>

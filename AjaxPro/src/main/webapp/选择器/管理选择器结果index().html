@@ -1,0 +1,40 @@
+<html>
+	<head>
+	<title>index()方法</title>
+		<style type="text/css">
+			html{
+				cursor:help;
+				font-size:12px;
+				font-family:Arial, Helvetica, sans-serif;
+			}
+			div{
+				border:1px solid #003a75;
+				background-color:#FFFF00;
+				margin:5px;
+				padding:20px;
+				text-align:center;
+				height:20px;
+				width:20px;
+				float:left
+			}
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//给所有div注册点击事件
+				$("div").click(function(){
+					//当前点击的div在这个元素集合里的下标
+					var index=$("div").index(this);
+					//设置span标签内的值
+					$("span").html(index.toString());
+				});
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div>0</div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+		点击的div块序号为：<span></span>
+	</body>
+</html>

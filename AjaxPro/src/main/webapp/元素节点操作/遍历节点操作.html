@@ -1,0 +1,40 @@
+<html>
+	<head>
+	<title>遍历节点操作</title>
+		<style type="text/css">
+			
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				alert($("ul").children().length);
+				//找到li的第一个元素，找到它的下一个
+				alert($("li:eq(0)").next().text());
+				//找到li的第四个元素，找到它上一个，再上一个
+				alert($("li:eq(3)").prev().prev().text());
+				//找到li第二个元素的父元素的标签值
+				alert($("li:eq(1)").parent().get(0).tagName);
+				//找到li第二个元素，所有的父元素，直到根节点，作为一个数组，的第二个
+				alert($("li:eq(1)").parents().get(1).tagName);
+				//找到li第二个元素，它所有同辈元素
+				alert($("li:eq(1)").siblings().text());  //北京天津南京
+				//找到li第二个元素，最接近的ul元素
+				alert($("li:eq(1)").closest("ul").get(0).tagName);
+				
+			});
+			
+		</script>
+	</head>
+	
+	<body>
+		<div id="city_section">
+			<ul>
+				<li>北京</li>
+				<li>上海</li>
+				<li>天津</li>
+				<li>南京</li>
+			</ul>
+		</div>
+	</body>
+</html>

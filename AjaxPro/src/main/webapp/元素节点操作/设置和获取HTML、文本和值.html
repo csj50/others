@@ -1,0 +1,44 @@
+<html>
+	<head>
+	<title>设置和获取HTML、文本和值</title>
+		<style type="text/css">
+			
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//查找id为show的元素
+				alert($("#show").html());
+				alert($("#show").text());  //忽略html标签
+				//$("#show").html("<i>我是div元素</i>");  //会解析html标签
+				$("#show").text("<i>我是div元素</i>");  //显示纯文本
+				alert($("#txt_name").val());
+				$("#txt_name").val("帅哥豪");
+				//能用id的就用id查找，因为id具有唯一性
+				$("#city").val("beijing");  //选择北京
+				$("#city").val(["beijing","tianjin"]);  //选择多个
+				$("input[name='hobby']").val(["football","tennis"]);
+				$("input[name='gender']").val(["male"]);
+				
+			});
+			
+		</script>
+	</head>
+	
+	<body>
+		<div id="show"><b>我是div元素</b></div>
+		<input type="text" id="txt_name" value="我叫帅哥" /><br/>
+		<select id="city" multiple="multiple" size="4">
+			<option value="shanghai" selected="selected">上海</option>
+			<option value="beijing">北京</option>
+			<option value="nanjing">南京</option>
+			<option value="tianjin">天津</option>
+		</select><br/>
+		<input type="checkbox" name="hobby" value="football"/>足球
+		<input type="checkbox" name="hobby" value="basketball"/>篮球
+		<input type="checkbox" name="hobby" value="tennis"/>网球<br/>
+		<input type="radio" name="gender" value="male"/>男
+		<input type="radio" name="gender" value="female"/>女<br/>
+	</body>
+</html>

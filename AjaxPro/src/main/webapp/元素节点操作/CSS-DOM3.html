@@ -1,0 +1,63 @@
+<html>
+	<head>
+	<title>漂浮广告</title>
+		<style type="text/css">
+			
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			var xin=true,yin=true;  //移动标记，xin=true往右移动，false往左
+			var step=1;  //移动步伐
+			var delay=10;  //时间间隔，100毫秒
+			var $obj;
+			
+			function move(){
+				var left=$obj.offset().left;
+				var top=$obj.offset().top;  //得到div相对浏览器的偏移量
+				var L=T=0;  //左边界和上边界
+				var R=$(window).width()-$obj.width();  //右边界
+				var B=$(window).height()-$obj.height();  //下边界
+				//水平方向判断
+				if (left<L){  //小于左边界，向右移动
+					xin=true;
+				}
+				if (left>R){  //大于右边界，向左移动
+					xin=false;
+				}
+				left=left+step*(xin?1:-1);
+				//垂直方向判断
+				if (top<T){  //小于上边界，向下移动
+					yin=true;
+				}
+				if (top>B){  //大于下边界，向上移动
+					yin=false;
+				}
+				top=top+step*(yin?1:-1);
+				//给div元素重新设置位置
+				$obj.offset({top:top,left:left});
+			}
+			
+			$(function(){
+				$obj=$("#imgDiv");
+				//不是图片在动，是div层在动
+				//设置定时器
+				var itl=setInterval("move()",delay);
+				//鼠标移上去事件
+				$obj.mouseover(function(){
+					clearInterval(itl);
+				});
+				//鼠标移开事件
+				$obj.mouseout(function(){
+					itl=setInterval("move()",delay);
+				});
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div id="imgDiv" style="position:absolute; left:50px; top:60px">
+			<img src="03.jpg" border="0" />
+		</div>
+	</body>
+</html>

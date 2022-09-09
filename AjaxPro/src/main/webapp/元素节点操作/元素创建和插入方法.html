@@ -1,0 +1,75 @@
+<html>
+	<head>
+	<title>元素创建和插入方法</title>
+		<style type="text/css">
+			html{
+				cursor:help;
+				font-size:12px;
+				font-family:Arial, Helvetica, sans-serif;
+			}
+			div{
+				border:1px solid #003a75;
+				background-color:#FFFF00;
+				margin:5px;
+				padding:20px;
+				text-align:center;
+				height:20px;
+				width:20px;
+				float:left
+			}
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			/*
+			//用DOM注册一个点击事件
+			document.onclick=function() {
+				//获取div元素数量
+				var i=$("div").length+1;
+				//创建div
+				var div=document.createElement("div");
+				//把i放入div元素内
+				div.innerHTML=i;
+				//把div元素添加到body元素内，作为它的一个子元素
+				$("body")[0].appendChild(div);
+				//修改span值
+				$("span")[0].innerHTML=i;
+			}
+			*/
+			
+			//用jQuery来实现，对比上面用DOM方式，jQuery方式比较简单
+			$(function(){
+				//查询当前文档，绑定click事件
+				$(document).click(function(){
+					var i=$("div").length+1;
+					//创建div标签
+					var div=$("<div>"+i+"</div>");
+					//查找body元素，追加一个子元素
+					//append方法
+					//$("body").append(div);
+					//appendTo方法
+					//div.appendTo($("body"));
+					//prepend方法
+					//$("body").prepend(div);
+					//prepend方法
+					//div.prependTo($("body"));
+					//after方法，在body元素之后，添加div元素
+					//$("body").after(div);
+					//insertAfter方法
+					//div.insertAfter($("body"));
+					//before方法
+					//$("body").before(div);
+					//insertBefore方法
+					div.insertBefore($("body"));
+					//span内加1
+					$("span").html(i);
+					
+				});
+			});
+		</script>
+	</head>
+	
+	<body>
+		<p>页面中一共有<span>0</span>个div块。点击鼠标添加div：</p>
+	</body>
+</html>

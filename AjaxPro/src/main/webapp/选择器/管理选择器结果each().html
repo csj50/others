@@ -1,0 +1,31 @@
+<html>
+	<head>
+	<title>each()方法</title>
+		<style type="text/css">
+			img{
+				border:1px solid #003863;
+			}
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//查找所有img元素，遍历集合里的每一个元素，每遍历一个调用一次函数
+				$("img").each(function(index){
+					//this是遍历的当前对象，是一个dom对象
+					//为img元素添加title属性
+					this.title="这是第"+index+"幅图片，id是"+this.id;
+				});
+				
+			});
+		</script>
+	</head>
+	
+	<body>
+		<img src="01.jpg" id="img01" />
+		<img src="02.jpg" id="img02" />
+		<img src="03.jpg" id="img03" />
+		<img src="04.jpg" id="img04" />
+		<img src="05.jpg" id="img05" />
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test ajax</title>
+
+<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("input:eq(0)").click(function(){
+			$.ajax({
+				url: "GetJSONServlet",
+				type: "get",
+				dataType: "json",
+				success: function(data){
+					//获得json数据
+					var students = data.students;
+					var res = "<ul>\n";
+					for (var i=0;i<students.length;i++){
+						//从json数组里取出json对象
+						var student = students[i];
+						res+="<li>"+student.name+"--"+student.password+"</li>\n";
+					}
+					res+="</ul>";
+					//把标签字符串生成一个节点对象，追加到content元素内
+					$(res).appendTo($("#content"));
+				},
+				error: function(data){
+					alert("失败啦");
+				},
+				complete: function(XMLHttpRequest, textStatus){
+					alert(XMLHttpRequest.status);
+				}
+			})
+		});
+		
+	});
+</script>
+
+</head>
+<body>
+	<input type="button" value="$.ajax()" /><br/>
+	<div id="content"></div>
+</body>
+</html>

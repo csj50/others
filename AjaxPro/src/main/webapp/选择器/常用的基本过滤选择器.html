@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				alert($("li:first").html());  //查找所有li元素，过滤选择第一个
+				alert($("li:last").html());  //查找所有li元素，过滤选择最后一个
+				alert($("ul input:not(:checked)").val());  //查找ul里面所有input元素，过滤出没有checked的元素
+				alert($("li:even").length);  //取出所有li元素的偶数项
+				alert($("li:even").get(1).innerHTML); //打印成熟，取出数组下标0和2，然后再取第二个
+				alert($("li:odd").get(1).innerHTML);  //打印担当
+				alert($("li:eq(2)").html());  //打印成熟
+				alert($("li:gt(1)").length);  //取出大于下标1的li元素
+				alert($("li:lt(3)").length);
+				alert($(":header").length);  //查找标题标签
+				
+			});
+		</script>
+	</head>
+	<body>
+		<div id="divTest">
+			<ul>
+				<li>投资</li>
+				<li>理财</li>
+				<li>成熟</li>
+				<li>担当</li>
+				<input type="radio" value="学习" checked="checked" />学习
+				<input type="radio" value="不学习" />不学习
+				<h1>Header 1</h1>
+				<h2>Header 2</h2>
+			</ul>
+		</div>
+	</body>
+</html>

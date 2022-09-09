@@ -1,0 +1,28 @@
+<html>
+	<head>
+	<title>find()_add()_not()方法</title>
+		<style type="text/css">
+			.myClass{
+				background:#ffde00;
+			}
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//找到所有p元素，从p元素内部找span元素
+				//添加p元素里的子元素b到元素集合
+				//给元素集合里的元素添加类选择器myClass，共2个
+				$("p").find("span").add("p>b").addClass("myClass");
+				
+				//not函数去除，和add相反
+				//.not("p>b")
+				
+			});
+		</script>
+	</head>
+	
+	<body>
+		<p><span>Hello</span>, how <b>are</b> you?</p>
+	</body>
+</html>

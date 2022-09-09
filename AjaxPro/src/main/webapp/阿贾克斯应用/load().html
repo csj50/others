@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test load()</title>
+ 
+<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("input:eq(0)").click(function(){
+			//在content标签上加载服务器端传回来的html文本
+			$("#content").load("LoadServlet #myli");
+		});
+		
+		$("input:eq(1)").click(function(){
+			//load加了第二个参数就是post请求了，不加第二个参数默认get请求
+			$("#content").load("LoadServlet", {'username':'chenhao','age':34}, function(responseText,textStatus,XMLHttpRequest){
+				alert(textStatus);
+				alert(XMLHttpRequest.status);
+			});
+		});
+	})
+</script>
+ 
+</head>
+<body>
+	<input type="button" value="loadGet" />
+	<input type="button" value="loadPost" />
+	<div id="content"></div>
+</body>
+</html>

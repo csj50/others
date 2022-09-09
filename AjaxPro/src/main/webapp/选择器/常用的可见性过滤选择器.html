@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				alert($("li:hidden").html());  //查找li元素，里面的隐藏的那个元素
+				alert($("li:visible").html());  //查找li元素，里面的可见的那个元素
+				
+			});
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>可见</li>
+			<li style="display:none;">不可见</li>
+		</ul>
+	</body>
+</html>

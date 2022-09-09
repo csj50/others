@@ -1,0 +1,35 @@
+<html>
+	<head>
+	<title>节点属性操作</title>
+		<style type="text/css">
+			
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("input:eq(0)").click(function(){
+					alert($("img").attr("id"));
+					
+				});
+				$("input:eq(1)").click(function(){
+					$("img").attr({"title":"下雪啦","name":"chenhao"});
+					
+				});
+				$("input:eq(2)").click(function(){
+					$("img").removeAttr("id");
+					
+				});
+			});
+			
+		</script>
+	</head>
+	
+	<body>
+		<img src="09.jpg" id="myimg" /><br/>
+		<input type="button" value="获取id属性" /><br/>
+		<input type="button" value="设置属性" /><br/>
+		<input type="button" value="删除属性" /><br/>
+		
+	</body>
+</html>

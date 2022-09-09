@@ -1,0 +1,37 @@
+<html>
+	<head>
+	<title>复制和替换元素</title>
+		<style type="text/css">
+			
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			/*
+			$(function(){
+				//查找第一张图片，注册点击事件
+				$("img:eq(0)").click(function(){
+					//当前对象，this是dom对象，通过$封装成jQuery对象
+					//复制并添加到body里
+					//但是新插入的图片并没有点击事件
+					$(this).clone().appendTo($("body"));
+					//可以继承点击事件
+					//$(this).clone(true).appendTo($("body"));
+				});
+			});
+			*/
+			
+			$(function(){
+				$("img:eq(0)").click(function(){
+					//把第二张图片替换成超链接
+					//$("img:eq(1)").replaceWith("<a href='#'>我是超链接</a>");
+					$("<a href='#'>我是超链接</a>").replaceAll("img:eq(1)");
+				});
+			});			
+		</script>
+	</head>
+	
+	<body>
+		<img src="09.jpg" /><img src="10.jpg" />
+	</body>
+</html>

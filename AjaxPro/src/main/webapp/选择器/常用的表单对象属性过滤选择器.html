@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				alert($(":text:disabled").length);  //查找所有text文本框，过滤出为disabled的
+				alert($(":text:enabled").length);
+				alert($(":input:checked").length);  //查找所有input元素，过滤出为checked的
+				alert($("select :selected").text());  //查找所有select表单元素，过滤出为selected的
+				
+			});
+		</script>
+	</head>
+	<body>
+		<form name="myform">
+			<input type="text" name="myname" value="chenhao" /><br/>
+			<input type="text" name="myage" value="34" disabled="disabled" /><br/>
+			<input type="text" name="pass" value="123" /><br/>
+			<input type="text" name="dog" value="阿旺" disabled="disabled" /><br/>
+			<input type="checkbox" name="hobby" value="football" checked="checked" />足球<br/>
+			<input type="checkbox" name="hobby" value="basketball" />篮球<br/>
+			<input type="checkbox" name="hobby" value="tennis" />网球<br/>
+			<select name="test" multiple="multiple">
+				<option selected="selected">浙江</option>
+				<option>湖南</option>
+				<option>北京</option>
+				<option>天津</option>
+				<option selected="selected">上海</option>
+			</select>
+		</form>
+	</body>
+</html>

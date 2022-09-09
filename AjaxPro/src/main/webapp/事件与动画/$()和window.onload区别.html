@@ -1,0 +1,57 @@
+<html>
+	<head>
+	<title>$()和window.onload区别</title>
+		<style type="text/css">
+			
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			/*
+			//javascript事件可以获得图片宽度
+			window.onload=function(){
+				alert($("img").width());
+			};
+			*/
+			
+			/*
+			//jQuery事件
+			//目前jQuery也可以获取图片宽度，加载时机提前了？
+			$(function(){
+				alert($("img").width());
+			});
+			*/
+			
+			/*
+			//jQuery中类似window.onload事件
+			//$(window).load()在1.8开始不支持了
+			//.load, .unload, and .error, deprecated since jQuery 1.8, are no more. Use .on() to register listeners.
+			$(window).on("load",function(){
+				alert($("img").width());
+			});
+			*/
+			
+			/*
+			//只能绑定最后一个函数
+			window.onload=function(){
+				alert("hello1");
+			}
+			window.onload=function(){
+				alert("hello2");
+			}
+			*/
+			
+			//弹出两个消息框，提示hello1，再提示hello2
+			$(function(){
+				alert("hello1");
+			});
+			$(function(){
+				alert("hello2");
+			});
+		</script>
+	</head>
+	
+	<body>
+		<img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" />
+	</body>
+</html>

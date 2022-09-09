@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				alert($("#divTest a").length);  //查找id为divTest，内部所有后代a元素
+				alert($("#divTest>input").length);  //查找id为divTest元素，内部所有input儿子元素
+				alert($("#next+input").length);  //查找id为next元素，的下一个同辈元素input
+				alert($("#next~input").length);  //查找id为next元素，之后所有的同辈元素input
+				
+			});
+		</script>
+	</head>
+	<body>
+		<div id="divTest">
+			<input type="text" value="投资" />
+			<input type="text" id="next" />
+			<input type="text" value="担当" />
+			<input type="text" title="学习" value="学习" />
+			<a>1<input type="text" value="股票" /></a>
+			<a>2<a>3</a></a>
+		</div>
+	</body>
+</html>

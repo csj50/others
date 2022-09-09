@@ -1,0 +1,76 @@
+<html>
+	<head>
+	<title>多级菜单</title>
+		<style type="text/css">
+			ul {
+				font-size:12px;
+				font-family:Arial, Helvetica, sans-serif;
+			}
+			li {
+				padding:1px;
+				margin:0px;
+			}
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//找到li元素，并且它含有ul元素
+				$("li:has('ul')").click(function(){
+					
+					//查找当前元素的子元素是隐藏还是显示
+					if($(this).children().is(":hidden")){
+						//是隐藏的，先加上减号图标，再把它的子元素显示
+						$(this).css("list-style-image","url(word02.png)").children().show();
+					}else{
+						//是显示的，先加上加号图标，再把它的子元素隐藏
+						$(this).css("list-style-image","url(word01.png)").children().hide();
+					}
+					
+					//发现你在下面点了，它的父节点也会收缩
+					//因为最外层也有ul-li标签，造成了冒泡事件
+					event.stopPropagation();
+					
+					//点击事件的范围是这个<li>标签到</li>标签内的所有空间
+					
+				});
+				
+				//查找不包含ul的li元素，图标设置none
+				$("li:not(:has('ul'))").css("list-style-image","none");
+			});
+			
+		</script>
+	</head>
+		
+	<body>
+		<ul>
+			<li>第1章：Javascript简介</li>
+			<li>第2章：Javascript基础</li>
+			<li>第3章：CSS基础
+				<ul>
+					<li>第3.1节：CSS的概念</li>
+					<li>第3.2节：使用CSS控制页面
+					<ul>
+						<li>3.2.1：行内样式</li>
+						<li>3.2.2：内嵌式</li>
+					</ul>
+					</li>
+					<li>第3.3节：CSS选择器</li>
+				</ul>
+				</li>
+			<li>第4章：CSS进阶
+				<ul>
+					<li>第4.1节：div标记与span标记</li>
+					<li>第4.2节：盒子模型</li>
+					<li>第4.3节：元素的定位
+						<ul>
+							<li>4.3.1：float定位</li>
+							<li>4.3.2：position定位</li>
+							<li>4.3.3：z-index空间位置</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>

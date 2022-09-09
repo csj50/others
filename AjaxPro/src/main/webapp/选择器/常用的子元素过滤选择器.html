@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				alert($("div :first-child").text());  //取出所有div里，第一个子元素的文本
+				alert($("div span:first-child").text());  //取出所有div里，第一个子元素为span的元素
+				alert($("div span:last-child").text());  //查找div元素下面的，最后一个子元素为span的元素
+				alert($("div span:first-of-type").text());  //查找div元素下面，第一个span元素，前后有同名兄妹节点的元素
+				alert($("div b:only-child").text());  //选取div下面，只具有唯一一个b元素的那个元素，不能有其他元素
+				alert($("div span:nth-child(2)").text());  //选取div下面，第二个元素是span元素的集合
+				alert($("div span:nth-child(1)").text());
+				alert($("div b:only-of-type").text());  //查找div下面，前后没有同名兄妹节点的b元素
+				alert($("div span:nth-child(even)").text());  //选取div下面，偶数行的span元素的集合
+				alert($("div span:nth-child(odd)").text());
+				
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			<span>Corey,</span>
+			<span>Yehuda,</span>
+			<span>Adam,</span>
+			<span>Todd</span>
+		</div>
+		<div>
+			<b>Nobody,</b>
+			<span>Jorn,</span>
+			<span>Scott,</span>
+			<span>Timo</span>
+		</div>
+		<div>
+			<b>chenhao</b>
+		</div>
+		<div>
+			<b>zhangsan</b>
+			<b>xiaoqiang</b>
+			<i>wangwu</i>
+		</div>
+	</body>
+</html>

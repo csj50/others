@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				alert($("li:contains('chenhao')").html());  //查找li元素，过滤出包含chenhao的
+				alert($("li:empty").length);  //查找li元素，过滤出没有子元素没有文本元素的
+				alert($("li:has(a)").html());  //查找li元素，过滤出包含a元素的
+				alert($("li:parent").length);  //查找li元素，过滤出包含子元素或包含文本元素的
+				
+			});
+		</script>
+	</head>
+	<body>
+		<div id="Test">
+			<ul>
+				<li>chenhao投资</li>
+				<li>zhangsan</li>
+				<li></li>
+				<li>理财</li>
+				<li><a>投资</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

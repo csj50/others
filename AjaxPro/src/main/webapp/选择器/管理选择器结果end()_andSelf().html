@@ -1,0 +1,36 @@
+<html>
+	<head>
+	<title>end()_andSelf()方法</title>
+		<style type="text/css">
+			.myBackground{
+				background:#ffde00;
+			}
+			.myBorder{
+				border:2px solid #0000FF;
+			}
+			p{
+				margin:8px;
+				padding:4px;
+				font-size:12px;
+			}
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//给p元素添加背景，给div元素添加边框
+				//$("div").find("p").addClass("myBackground").end().addClass("myBorder");
+				//给p元素添加背景，给div和p元素添加边框
+				//jQuery3.x用addBack()替换andSelf()
+				$("div").find("p").addClass("myBackground").addBack().addClass("myBorder");
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p>第一段</p>
+			<p>第二段</p>
+		</div>
+	</body>
+</html>

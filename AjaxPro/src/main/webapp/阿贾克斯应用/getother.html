@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test getother</title>
+ 
+<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("input:eq(0)").click(function(){
+			//加载js文件功能
+			$.getScript("script/my.js",function(){
+				f();
+			});
+		});
+		
+		$("input:eq(1)").click(function(){
+			//加载外部json文件功能
+			$.getJSON("script/myJson.json",function(data){
+				var name = data.name;
+				var age = data.age;
+				$("<p>用户名："+name+"，年龄："+age+"</p>").appendTo($("#content"));
+			});
+		});
+		
+		$("input:eq(2)").click(function(){
+			//加载外部json文件功能
+			$.getJSON("http://localhost:8080/AjaxPro/GetJSONServlet",function(data){
+				//获得json数据
+				var students = data.students;
+				var res = "<ul>\n";
+				for (var i=0;i<students.length;i++){
+					//从json数组里取出json对象
+					var student = students[i];
+					res+="<li>"+student.name+"--"+student.password+"</li>\n";
+				}
+				res+="</ul>";
+				//把标签字符串生成一个节点对象，追加到content元素内
+				$(res).appendTo($("#content"));
+			});
+		});
+	})
+</script>
+ 
+</head>
+<body>
+	<input type="button" value="getScript" /><br/>
+	<input type="button" value="getJSON" /><br/>
+	<input type="button" value="getWebJSON" /><br/>
+	<div id="content"></div>
+</body>
+</html>

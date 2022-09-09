@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				alert($("input[name]").length);  //查找所有input元素，过滤出包含name属性的input
+				alert($("input[type='text']").length);  //查找所有input元素，过滤出type等于text的input
+				alert($("input[type!='text']").length);
+				alert($("input[name^='s']").length);  //查找所有input元素，过滤出name以s开头的input
+				alert($("input[name$='hu']").val());  //查找所有input元素，过滤出name以hu结尾的input
+				alert($("input[name*='o']").length);  //所有包含o的元素
+				alert($("input[name~='tong']").val());  //必须包含tong，并且tong前面或后面用空格隔开
+				alert($("input[type^='b'][name~='hai']").val());  //type以b开头，name必须包含hai，并且有空格隔开
+				
+			});
+		</script>
+	</head>
+	<body>
+		<input type="text" name="baidu" value="百度" /><br/>
+		<input type="text" name="sohu" value="搜狐" /><br/>
+		<input type="text" name="google" value="谷歌" /><br/>
+		<input type="text" name="sogou" value="搜狗" /><br/>
+		<input type="text" name="sina" value="新浪" /><br/>
+		<input type="button" name="hai tong" value="海通科技"/>
+		
+	</body>
+</html>

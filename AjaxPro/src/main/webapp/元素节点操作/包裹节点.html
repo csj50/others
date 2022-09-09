@@ -1,0 +1,41 @@
+<html>
+	<head>
+	<title>包裹节点</title>
+		<style type="text/css">
+			p{
+				font-size:14px;
+				margin:0px;
+				padding:5px;
+			}
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//给第一个按钮注册事件
+				$("input:eq(0)").click(function(){
+					$("p").wrap("<div id='mydiv'></div>");
+				});
+				//给第二个按钮注册事件
+				$("input:eq(1)").click(function(){
+					$("p").wrapAll("<div id='mydiv'></div>");
+				});
+				//给第三个按钮注册事件
+				$("input:eq(2)").click(function(){
+					$("p").wrapInner("<div id='mydiv'></div>");
+				});
+			});
+			
+		</script>
+	</head>
+	
+	<body>
+		<p>我是段落1</p>
+		<h5>我是5号标题</h5>
+		<p>我是段落2</p>
+		<input type="button" value="wrap" /><br/>
+		<input type="button" value="wrapAll" /><br/>
+		<input type="button" value="wrapInner" /><br/>
+		
+	</body>
+</html>

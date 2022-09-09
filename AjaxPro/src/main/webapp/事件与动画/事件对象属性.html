@@ -1,0 +1,40 @@
+<html>
+	<head>
+	<title>事件对象属性</title>
+		<style type="text/css">
+			
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				/*
+				$("a").click(function(event){
+					alert(event.type);  //获取事件类型
+					var tg=event.target;  //获取触发事件的事件源
+					alert(tg.href);  //弹出事件源的href属性
+					alert(event.pageX+"--"+event.pageY);  //获取点击位置在浏览器中的x坐标和y坐标
+					return false;
+				});
+				*/
+				
+				//鼠标按下事件
+				$("a").mousedown(function(event){
+					alert(event.which);
+					return false;
+				});
+				
+				$("input").keyup(function(event){
+					alert(event.which);  //event.which既可以获得鼠标按键，也可以获得键盘按键
+					return false;
+				});
+			});
+			
+		</script>
+	</head>
+	
+	<body>
+		<a href="http://www.baidu.com">点击我</a>
+		<input type="button" value="点击我" />
+	</body>
+</html>

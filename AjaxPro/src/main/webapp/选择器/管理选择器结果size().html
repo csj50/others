@@ -1,0 +1,43 @@
+<html>
+	<head>
+	<title>size()方法</title>
+		<style type="text/css">
+			html{
+				cursor:help;
+				font-size:12px;
+				font-family:Arial, Helvetica, sans-serif;
+			}
+			div{
+				border:1px solid #003a75;
+				background-color:#FFFF00;
+				margin:5px;
+				padding:20px;
+				text-align:center;
+				height:20px;
+				width:20px;
+				float:left
+			}
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			//用DOM注册一个点击事件
+			document.onclick=function() {
+				//获取div元素数量
+				var i=$("div").length+1;
+				//创建div
+				var div=document.createElement("div");
+				//把i放入div元素内
+				div.innerHTML=i;
+				//把div元素添加到body元素内，作为它的一个子元素
+				$("body")[0].appendChild(div);
+				//修改span值
+				$("span")[0].innerHTML=i;
+			}
+		</script>
+	</head>
+	
+	<body>
+		<p>页面中一共有<span>0</span>个div块。点击鼠标添加div：</p>
+	</body>
+</html>

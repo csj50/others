@@ -1,0 +1,50 @@
+<html>
+	<head>
+	<title>trigger</title>
+		<style type="text/css">
+			* {margin:0; padding:0; }
+			body {font-size:13px; line-height:130%; padding:60px; }
+			p {width:200px; background:#888; color:white; height:16px; }
+		</style>
+		
+		<script type="text/javascript" src="script/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				/*
+				$("#btn").bind("click",function(){
+					$("#test").append("<p>我的绑定函数1-click</p>");
+				}).bind("click",function(){
+					$("#test").append("<p>我的绑定函数2-click</p>");
+				}).trigger("click");  //模拟自身的click
+				*/
+				
+				//方式二，简写click()
+				/*
+				$("#btn").bind("click",function(){
+					$("#test").append("<p>我的绑定函数1-click</p>");
+				}).bind("click",function(){
+					$("#test").append("<p>我的绑定函数2-click</p>");
+				}).click();
+				*/
+				
+				//触发自定义事件
+				/*
+				$("#btn").bind("hao",function(){
+					alert("hello world");
+				}).trigger("hao");
+				*/
+				
+				//传递数据
+				$("#btn").bind("hao",function(event,msg1,msg2){
+					alert(msg1+"---"+msg2);
+				}).trigger("hao",["hello","world"]);
+			});
+			
+		</script>
+	</head>
+	
+	<body>
+		<button id="btn">点击我</button>
+		<div id="test"></div>
+	</body>
+</html>
