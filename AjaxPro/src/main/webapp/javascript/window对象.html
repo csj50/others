@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>window对象</title>
+<script src="funs.js"></script>
+<style>
+
+</style>
+</head>
+
+<body>
+	<button id="openid">打开新窗口</button>
+	<button id="closeid">关闭新窗口</button>
+	<button style="background:#F00" onclick="win2color('red')">红</button>
+	<button style="background:#0F0" onclick="win2color('green')">绿</button>
+	<button style="background:#00F" onclick="win2color('blue')">蓝</button>
+</body>
+
+<script>
+	$("openid").onclick=function(){
+		win2=window.open("","","width=300px,height=300px,left=0px,top=0px,location=0");
+		
+	};
+	
+	$("closeid").onclick=function(){
+		win2.close();
+	};
+	
+	function win2color($c){
+		win2.document.documentElement.style.background=$c;
+	}
+
+</script>
+
+</html>

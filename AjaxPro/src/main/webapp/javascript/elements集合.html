@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>elements集合</title>
+<script src="funs.js"></script>
+<style>
+
+</style>
+</head>
+
+<body>
+	<form style="display:inline">
+		请选择水果：
+		<br/>
+		<select name="s1" id="" size="10" style="width:60px;height:200px;" multiple>
+			<option value="苹果">苹果</option>
+			<option value="香蕉">香蕉</option>
+			<option value="橘子">橘子</option>
+			<option value="桃子">桃子</option>
+			<option value="西瓜">西瓜</option>
+			<option value="香瓜">香瓜</option>
+			<option value="葡萄">葡萄</option>
+		</select>
+	</form>
+		<button onclick="sct()">>></button>
+	<form style="display:inline">
+		<select name="s2" id="" size="10" style="width:60px;height:200px;">
+		
+		</select>
+	</form>
+</body>
+
+<script>
+	var forms=document.forms;  //两个form表单
+	
+	function sct(){
+		var select=forms[0].elements; //第一个form表单，里面就一个select元素
+		var select2=forms[1].elements;
+		var opts=select[0].options;  //select元素里面的options
+		
+		for(var i=0;i<opts.length;i++){
+			if (opts[i].selected){ //后面删了，前面人会往上挤
+				//alert(opts[i].value);
+				//我们要自己创建一个option
+				var newopt=document.createElement("option");
+				newopt.value=opts[i].value;
+				newopt.innerHTML=opts[i].value;
+				
+				//塞到第二个select里面
+				select2[0].add(newopt);
+				
+				//删除第一个下拉菜单的元素
+				select[0].remove(i);
+				
+				i--; //删除后元素个数变了，要减回去
+				
+			}
+		}
+		
+	}
+</script>
+
+</html>

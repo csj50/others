@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>onsubmit事件</title>
+<script src="funs.js"></script>
+<style>
+
+</style>
+</head>
+
+<body>
+	<form action="index.php" id="formid">
+		<input type="text" name="search" id="inputid" /> 搜索
+		<br/>
+		<input type="submit" value="提交" />
+	</form>
+</body>
+
+<script>
+
+$("formid").onsubmit=function(){
+	alert(1);
+	return false;
+}
+</script>
+
+</html>

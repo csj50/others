@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>onkeyup事件</title>
+<script src="funs.js"></script>
+<style>
+
+</style>
+</head>
+
+<body>
+	<form action="" id="formid">
+		验证码：<input type="text" id="inputid" />
+	</form>
+</body>
+
+<script>
+
+$("inputid").onkeyup=function(){
+	this.value=this.value.toUpperCase();
+}
+</script>
+
+</html>

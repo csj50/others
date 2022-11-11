@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>location对象</title>
+<script src="funs.js"></script>
+<style>
+
+</style>
+</head>
+
+<body>
+	<button id="btn">查看历史</button>
+	<div id="divid"></div>
+</body>
+
+<script>
+	$("btn").onclick=function(){
+		str="";
+		for(var i in location){
+			str+="<h2>"+i+"===>"+location[i]+"</h2>";
+		}
+		$("divid").innerHTML=str;
+	};
+
+</script>
+
+</html>

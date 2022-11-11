@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>onfocus事件</title>
+<script src="funs.js"></script>
+<style>
+
+</style>
+</head>
+
+<body>
+	<form action="">
+		<input type="text" name="search" id="inputid" value="请输入关键字" /> 搜索
+	</form>
+</body>
+
+<script>
+
+$("inputid").onfocus=function(){
+	this.value="";
+}
+</script>
+
+</html>

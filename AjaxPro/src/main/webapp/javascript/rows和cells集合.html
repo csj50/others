@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>rows和cells集合</title>
+<script src="funs.js"></script>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+	<table width="500px" border="1" id="tid">
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+</body>
+
+<script>
+	var tabobj=document.getElementById("tid");
+	//alert(tabobj.rows.length);
+	//alert(tabobj.rows[0].cells.length);
+	
+	tabobj.insertRow(0); //插入一行
+	tabobj.rows[0].insertCell(0); //插入一列
+	tabobj.rows[0].insertCell(1);
+	tabobj.rows[0].insertCell(2);
+	
+	tabobj.rows[0].cells[0].innerHTML="aaa";
+	tabobj.rows[0].cells[1].innerHTML="bbb";
+	tabobj.rows[0].cells[2].innerHTML="ccc";
+</script>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>onerror事件</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<img src="a.jpg" id="imgid" />
+</body>
+
+<script>
+//$是函数名，$id是入参
+function $($id){
+	return document.getElementById($id);
+}
+
+$("imgid").onerror=function(){
+	alert(1);
+	this.src="../02.jpg";  //显示默认图片
+}
+</script>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Jquery实现定时器案例</title>
+<style>
+#demo {
+	width: 300px;
+	margin: 10% auto;
+}
+
+.time {
+	display: block;
+	width: 300px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: white;
+	background: green;
+	font-size: 30px;
+}
+
+.btn {
+	width: 100%;
+	margin-top: 30px;
+	text-align: center;
+}
+
+button {
+	color: white;
+	font-size: 16px;
+	border: 0;
+}
+
+button:nth-child(1) {
+	background: green;
+}
+
+button:nth-child(2) {
+	background: red;
+}
+
+button:hover {
+	background: gray;
+}
+</style>
+</head>
+
+<body>
+	<div id="demo">
+		<div>
+			<span class="time">00:00:00</span>
+		</div>
+		<div class="btn">
+			<button onclick="start()">开始计时</button>
+			<button onclick="stop()">停止计时</button>
+		</div>
+	</div>
+	<script
+		src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+		$(function(){
+			var tt=new Date();
+			var time=tt.getFullYear()+"-"+(tt.getMonth()+1)+"-"+tt.getDate()+" "+tt.getHours()+":"+tt.getMinutes()+":"+tt.getSeconds();
+			alert(time);
+			alert(tt.toLocaleString());
+		});
+		
+        //将秒转换为时分秒
+        function formatSeconds(value) {
+            var hours = 0; // 时
+            var minute = 0; // 分
+            var second = parseInt(value); // 秒
+            if (second > 60) {
+                minute = parseInt(second / 60);
+                second = parseInt(second % 60);
+                if (minute > 60) {
+                    hours = parseInt(minute / 60);
+                    minute = parseInt(minute % 60);
+                }
+            }
+            //如果值小于10，在前面补零
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
+            if (minute < 10) {
+                minute = "0" + minute
+            }
+            if (second < 10) {
+                second = "0" + second;
+            }
+            return hours + ":" + minute + ":" + second;
+        }
+        //定时器
+        var timer;
+        //累加器
+        var count;
+        //开始计时
+        function start() {
+            console.log("开始计时");
+            //清除定时器,防止多个定时器执行
+            clearTimeout(timer);
+            //初始化count值
+            count = 0
+            timer = setInterval(function() {
+                ++count;
+                let result = formatSeconds(count);
+                $(".time").html(result);
+            }, 1000);
+        }
+        //停止计时
+        function stop() {
+            console.log("停止计时");
+            //清除定时器
+            clearTimeout(timer);
+            $(".time").html(formatSeconds(0));
+        }
+    </script>
+
+</body>
+
+</html>

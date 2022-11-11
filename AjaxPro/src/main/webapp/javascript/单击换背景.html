@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>单击换背景</title>
+<script src="funs.js"></script>
+<style>
+
+</style>
+</head>
+
+<body>
+	<button style="background:#F00">红</button>
+	<button style="background:#0F0">绿</button>
+	<button style="background:#00F">蓝</button>
+	<button style="background:#F0F">紫</button>
+	<button style="background:#0FF">青</button>
+</body>
+
+<script>
+var buttons=$e("button");
+for(var i=0;i<buttons.length;i++){
+	buttons[i].onclick=function(){
+		document.documentElement.style.background=this.style.background;
+	}
+}
+
+</script>
+
+</html>

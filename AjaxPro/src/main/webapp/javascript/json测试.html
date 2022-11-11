@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>json测试</title>
+<script src="funs.js"></script>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script>
+	var obj=[{"aid":16,"id":16,"new":false,"serviceno":"P32022072802","tsfid":1543,"userName":"张","workDate":"2022-10-29","workTime":"3","workType":"技术开发"},{"aid":15,"id":15,"new":false,"serviceno":"P32022072802","tsfid":1543,"userName":"测试用户1","workDate":"2022-10-27","workTime":"4","workType":"技术开发"},{"aid":14,"id":14,"new":false,"serviceno":"P32022072802","tsfid":1543,"userName":"测试用户1","workDate":"2022-10-19","workTime":"2","workType":"技术开发"},{"aid":13,"id":13,"new":false,"serviceno":"P32022072802","tsfid":1543,"userName":"孙宇","workDate":"2022-10-17","workTime":"4","workType":"技术开发"},{"aid":1,"id":1,"new":false,"serviceno":"P32022072802","tsfid":1543,"userName":"张三","workDate":"2022-10-16","workTime":"1.5","workType":"技术开发"},{"aid":2,"id":2,"new":false,"serviceno":"P32022072802","tsfid":1543,"userName":"123","workDate":"2022-10-16","workTime":"666","workType":"技术开发"},{"aid":3,"id":3,"new":false,"serviceno":"P32022072802","tsfid":1543,"userName":"123","workDate":"2022-10-16","workTime":"666","workType":"技术开发"},{"aid":5,"id":5,"new":false,"serviceno":"P32022072802","tsfid":1543,"userName":"admin","workDate":"2022-10-16","workTime":"2","workType":"技术开发"},{"aid":6,"id":6,"new":false,"serviceno":"P32022072802","tsfid":1543,"userName":"admin","workDate":"2022-10-16","workTime":"2","workType":"技术开发"},{"aid":7,"id":7,"new":false,"serviceno":"P32022072802","tsfid":1543,"userName":"admin","workDate":"2022-10-16","workTime":"2","workType":"技术开发"},{"aid":8,"id":8,"new":false,"serviceno":"P32022072802","tsfid":1543,"userName":"admin","workDate":"2022-10-16","workTime":"2","workType":"技术开发"},{"aid":9,"id":9,"new":false,"serviceno":"P32022072802","tsfid":1543,"userName":"123","workDate":"2022-10-16","workTime":"2","workType":"技术开发"},{"aid":10,"id":10,"new":false,"serviceno":"P32022072802","tsfid":1543,"userName":"123","workDate":"2022-10-16","workTime":"2","workType":"技术开发"},{"aid":11,"id":11,"new":false,"serviceno":"P32022072802","tsfid":1543,"userName":"q","workDate":"2022-10-16","workTime":"2","workType":"技术开发"},{"aid":12,"id":12,"new":false,"serviceno":"P32022072802","tsfid":1543,"userName":"张三","workDate":"2022-10-16","workTime":"2","workType":"技术开发"},{"aid":4,"id":4,"new":false,"serviceno":"P32022072802","tsfid":1543,"userName":"张三","workDate":"2022-10-05","workTime":"1.5","workType":"技术开发"}]
+	alert(obj);
+	alert(obj.length);
+	//把对象转成json字符串
+	var arrays = JSON.stringify(obj);
+	alert(arrays);
+</script>
+
+</html>
