@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Symbol的介绍与创建</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script>
+	//创建Symbol
+
+    //1. 使用Symbol()方法
+    let s = Symbol();
+    console.log(s, typeof s);
+
+    let s2 = Symbol('张三');
+    let s3 = Symbol('张三');
+    console.log(s2 === s3);  //false
+
+    //2. Symbol.for 创建
+    let s4 = Symbol.for('张三');
+    let s5 = Symbol.for('张三');
+    console.log(s4 === s5);  //true
+
+    //向对象中添加方法：up、down
+    //但是我不知道game对象中是否已经有了up和down方法
+    let game = {
+        up: function() {
+            console.log("向上1");
+        },
+        down: function() {
+            console.log("向下1");
+        },
+        name: "俄罗斯方块"
+    }
+
+    //声明一个对象
+    let methods = {
+        up: Symbol(),
+        down: Symbol()
+    }
+
+    game[methods.up] = function() {
+        console.log("向上2");
+    }
+    game[methods.down] = function() {
+        console.log("向下2");
+    }
+
+    console.log(game);
+
+    let youxi = {
+        name: "狼人杀",
+        [Symbol('say')]: function(){
+            console.log("我可以发言");
+        },
+        [Symbol('zibao')]: function(){
+            console.log("我可以自爆");
+        }
+    }
+
+    console.log(youxi);
+</script>
+
+</html>

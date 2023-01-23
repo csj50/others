@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Map集合</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script>
+    //声明Map
+    let m = new Map();
+    m.set('name','张三');
+    m.set('say', function(){
+        console.log("发言了！");
+    })
+
+    //声明一个对象
+    let key = {
+        school : 'xxx三中'
+    }
+    m.set(key, ['北京','上海','深圳']);
+
+    //打印Map对象
+    console.log(m);
+
+    //-------------------------------------------------------------
+
+    //size
+    console.log(m.size);
+
+    //delete
+    m.delete('name');
+    console.log(m);
+
+    //get
+    console.log(m.get('say'));
+
+    //遍历
+    for(let v of m){
+        console.log(v);
+    }
+
+</script>
+
+</html>

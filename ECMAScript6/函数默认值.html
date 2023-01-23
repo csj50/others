@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>函数默认值</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script>
+	//形参初始值
+    function add(a,b,c=10){
+        return a + b + c;
+    }
+    let result = add(1,2);
+    console.log(result);
+
+    //与解构赋值结合
+    //定义函数
+    function connect({host,username,password,port}){
+        console.log(host);
+        console.log(username);
+        console.log(password);
+        console.log(port);
+    }
+    //函数调用
+    connect({
+        host: 'localhost',
+        username: 'root',
+        password: 'root',
+        port: 3306
+    });
+</script>
+
+</html>

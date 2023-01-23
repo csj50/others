@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Symbol内置属性</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script>
+    //这个Person的class和构造函数是一样的，为了实例化对象而用的
+	class Person{
+        static [Symbol.hasInstance](param){
+            //类似于重写instanceof方法，自己来实现
+            console.log(param);
+            console.log("我被用来检测类型了");
+            return true;
+        }
+    }
+
+    let o = {};
+
+    console.log(o instanceof Person);
+
+    const arr = [1,2,3];
+    const arr2 = [4,5,6];
+    //正常合并
+    console.log(arr.concat(arr2));
+
+    //设置Symbol.isConcatSpreadable
+    arr2[Symbol.isConcatSpreadable] = false;  //不可展开
+    console.log(arr.concat(arr2));  //arr2作为一个整体加入到了arr中
+
+</script>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>函数</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script>
+	function getName(){
+        console.log(this.name);
+    }
+
+    let getName2 = () => {
+        console.log(this.name);
+    }
+
+    //设置window对象的name属性
+    window.name = '张三';
+
+    //定义一个对象
+    const school = {
+        name: "李四"
+    }
+
+    //直接调用
+    getName();  //张三
+    getName2();  //张三
+
+    //call方法调用
+    //call方法可以改变函数内部this的值的
+    getName.call(school);  //变为李四
+    getName2.call(school);  //还是张三
+
+    // let Person = (name, age) => {
+    //     this.name = name;
+    //     this.age = age;
+    // }
+    // let me = new Person('xiao', 30);
+    // console.log(me);
+
+    // let fn = () => {
+    //     console.log(arguments);
+    // }
+    // fn(1, 2, 3);
+
+    let add = n => {
+        return n + n;
+    }
+    console.log(add(9));
+
+    let pow = n => n * n;
+    console.log(pow(8));
+    
+</script>
+
+</html>

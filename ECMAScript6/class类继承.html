@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>class类继承</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script>
+    //父类
+    //手机
+    function Phone(brand, price){
+        this.brand = brand;
+        this.price = price;
+    }
+
+    Phone.prototype.callphone = function(){
+        console.log("我可以打电话！");
+    }
+
+    //子类
+    //智能手机
+    function SmartPhone(brand, price, color, size){
+        //这个call方法是js Function上的方法，作用是调用一个对象的一个方法，以另一个对象替换当前对象
+        //this参数指向SmartPhone里的实例对象
+        Phone.call(this, brand, price);
+        this.color = color;
+        this.size = size;
+    }
+
+    //设置子集构造函数的原型
+    SmartPhone.prototype = new Phone;  //这样SmartPhone的实例对象，就会有父类的方法
+    SmartPhone.prototype.constructor = SmartPhone;  //校正
+
+    //声明子类的方法
+    SmartPhone.prototype.photo = function(){
+        console.log("我可以拍照！");
+    }
+
+    SmartPhone.prototype.playGame = function(){
+        console.log("我可以玩游戏！");
+    }
+
+    const chuizi = new SmartPhone('锤子', 2499, '黑色', 5.5);
+
+    console.log(chuizi);
+    
+
+</script>
+
+</html>

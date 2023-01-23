@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Promise的catch方法</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script>
+	const p = new Promise((resolve, reject)=>{
+		//模拟操作
+		setTimeout(()=>{
+			//设置p对象的状态为失败，并设置失败的值
+			reject("出错啦！");
+		}, 1000);
+	});
+
+	// p.then(value=>{}, reason=>{
+	// 	console.error(reason);
+	// });
+
+	//catch只回调状态失败时的回调方法
+	p.catch(reason=>{
+		console.warn(reason);
+	});
+
+</script>
+
+</html>

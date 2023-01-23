@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>迭代器-自定义遍历数据</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script>
+	//声明一个对象
+    const banji = {
+        name: "一班",
+        stus:[
+            "小明",
+            "小王",
+            "小天",
+            "king"
+        ],
+        [Symbol.iterator](){
+            //索引变量
+            let index = 0;
+            //保存banji对象的this
+            let _this = this;  //因为在return花括号里的this指向的是return这个对象
+            return {
+                next: function(){
+                    if (index < _this.stus.length){
+                        const result = {value: _this.stus[index], done: false};
+                        //下标自增
+                        index++;
+                        //返回结果
+                        return result;
+                    }else{
+                        return {value: undefined, done: true};
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    //用for...of遍历这个对象
+    for (let v of banji){
+        console.log(v);
+    }
+
+</script>
+
+</html>

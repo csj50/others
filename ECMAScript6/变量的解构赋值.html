@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>变量的解构赋值</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script>
+	const F4 = ['赵一', '赵二', '赵三', '赵四'];
+    let [yi, er, san, si] = F4;
+    console.log(yi);
+    console.log(er);
+    console.log(san);
+    console.log(si);
+    
+    const zhao = {
+        name: '赵一',
+        age: '60',
+        song: function(){
+            console.log("我可以唱歌");
+        }
+    };
+    //赋值
+    let {name, age, song} = zhao;
+    console.log(name);
+    console.log(age);
+    console.log(song);
+    //方法调用
+    song();
+    
+</script>
+
+</html>

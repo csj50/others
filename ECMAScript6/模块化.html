@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>模块化</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script type="module">
+	// //引入 模块化-m1.js
+    // //通用方式
+    // import * as m1 from "./模块化-m1.js";
+    // console.log(m1);
+    
+    // //引入 模块化-m2.js
+    // import * as m2 from "./模块化-m2.js";
+    // console.log(m2);
+
+    // //引入 模块化-m3.js
+    // import * as m3 from "./模块化-m3.js";
+    // console.log(m3);
+    // //调用方法
+    // m3.default.change();
+
+    // //解构赋值形式
+    // import {school, teach} from "./模块化-m1.js";
+    // //直接使用school和teach这两个变量
+    // console.log(school);
+    // console.log(teach);
+
+    // //使用别名
+    // import {school, teach} from "./模块化-m1.js";
+    // import {school as erzhong, findJob} from "./模块化-m2.js";
+
+    // import {default as m3} from "./模块化-m3.js";
+    // console.log(m3);
+
+    // import m3 from "./模块化-m3.js";
+    // console.log(m3);
+
+
+</script>
+
+<script src="./模块化-main.js" type="module"></script>
+
+</html>

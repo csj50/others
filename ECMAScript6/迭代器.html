@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>迭代器</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script>
+	//声明一个数组
+    const xiyou = ['唐僧','孙悟空','猪八戒','沙和尚'];
+
+    //使用for...of遍历数组
+    for (let v of xiyou){
+        console.log(v);
+    }
+
+    //使用for...in循环
+    for(let j in xiyou){
+        console.log(j);
+    }
+
+    //获取迭代器对象
+    let iterator = xiyou[Symbol.iterator]();
+    console.log(iterator);
+
+    //调用对象的next方法
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+
+</script>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>class类</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script>
+	// //手机
+    // function Phone(brand, price){
+    //     //对实例对象的属性做初始化
+    //     this.brand = brand;
+    //     this.price = price;
+    // }
+
+    // //添加call方法
+    // //通过原型对象来去添加，这样可以重用
+    // Phone.prototype.call = function(){
+    //     console.log("我可以打电话！");
+    // }
+
+    // //实例化对象
+    // let Huawei = new Phone('华为', 5888);
+
+    // //调用call方法
+    // Huawei.call();
+
+    // //打印Huawei这个变量
+    // console.log(Huawei);
+
+    //--------------------------------------------------------------------
+
+    class Phone{
+        //构造方法，名字不能修改
+        constructor(brand, price){
+            this.brand = brand;
+            this.price = price;
+        }
+
+        //方法必须使用该形式
+        //不能使用ES5的对象完成形式，call: function(){...}
+        call(){
+            console.log("我可以打电话！");
+        }
+    }
+
+    let onePlus = new Phone("1加", 1999);
+
+    console.log(onePlus);
+</script>
+
+</html>

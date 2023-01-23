@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>函数rest参数</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script>
+	//ES6获取实参的方式
+    function date(...args){
+        console.log(args);
+    }
+    //函数调用
+    date('白芷','娇娇','思慧');
+
+    function fn(a,b,c,...args){
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(args);
+    }
+    fn(1,2,3,4,5,6);
+</script>
+
+</html>

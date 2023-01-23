@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>class的get和set</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script>
+	//get和set
+    class Phone{
+        //类内部缓存price值
+        _price = 0;
+
+        get price(){
+            console.log("价格属性被读取了");
+            return this._price;  //这个get函数的返回值，就是这个属性的值
+        }
+
+        set price(arg){
+            console.log("价格属性被修改了");
+            this._price = arg;
+        }
+    }
+
+    //实例化对象
+    let s = new Phone();
+
+    //获取
+    console.log(s.price);
+    //赋值
+    s.price = 2899;
+    console.log(s.price);
+    
+
+</script>
+
+</html>

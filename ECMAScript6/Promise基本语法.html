@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Promise基本语法</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script>
+	//实例化 Promise 对象
+    const p = new Promise(function(resolve, reject){
+        setTimeout(function(){
+            //模拟获取数据
+            let data = '数据库中的用户数据';
+            //调用resolve
+            resolve(data);
+            //调用后p的状态会变成成功
+        }, 1000);
+    });
+
+    //调用 Promise 对象的 then 方法
+    p.then(function(value){  //它有两个形参，成功的形参叫value
+        //当你调用resolve()，Promise对象状态为成功时，调用第一个函数
+        console.log(value);
+    }, function(reason){  //失败的形参叫reason
+        //如果调用reject()，Promise对象状态为失败，调用第二个函数
+        console.error(reason);
+    });
+
+</script>
+
+</html>

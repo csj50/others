@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Set集合</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script>
+    //声明一个Set
+	let s = new Set();
+    console.log(s, typeof s);
+
+    //传入一个数组
+    let s2 = new Set(['大事儿','小事儿','好事儿','坏事儿','小事儿']);
+    console.log(s2);
+
+    //元素个数
+    console.log(s2.size);
+
+    //添加新元素
+    s2.add('喜事儿');
+    console.log(s2);
+
+    //删除元素
+    s2.delete('坏事儿');
+    console.log(s2);
+
+    //检测
+    console.log(s2.has('好事儿'));  //有返回true，没有返回false
+
+    //for...of遍历Set集合
+    for(let v of s2){
+        console.log(v);
+    }
+
+    //清空
+    s2.clear();
+    console.log(s2);
+
+    //-----------------------------------------------------------------------------
+
+    let arr = [1,2,3,4,5,4,3,2,1];
+
+    //1. 数组去重
+    let result = [...new Set(arr)];  //先将数组变为Set集合，在用扩展运算符变为数组
+    console.log(result);
+
+    //2. 交集
+    let arr2 = [4,5,6,5,6];
+    //arr去重
+    let result2 = [...new Set(arr)].filter(item => {
+        //把arr2也变成一个集合
+        let s2 = new Set(arr2);
+        if(s2.has(item)){
+            return true;
+        }else{
+            return false;
+        }
+    });
+    console.log(result2);
+
+    //3. 并集
+    let union = [...new Set([...arr, ...arr2])];
+    console.log(union);
+
+    //4. 差集
+    let diff = [...new Set(arr)].filter(item => !(new Set(arr2).has(item)));
+    console.log(diff);
+
+</script>
+
+</html>

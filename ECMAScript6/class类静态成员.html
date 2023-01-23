@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>class静态成员</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script>
+    // //定义一个构造函数，构造函数本身也是一个对象
+	// function Phone(){
+
+    // }
+
+    // //在函数对象上添加属性和方法
+    // Phone.name = '手机';
+    // Phone.change = function(){
+    //     console.log("我可以改变世界！");
+    // }
+
+    // //实例对象
+    // let nokia = new Phone();
+
+    // //函数对象原型上修改属性
+    // Phone.prototype.size = 5.5;
+
+    // console.log(nokia.size);
+
+    // console.log(nokia.name);
+    // console.log(nokia.change());
+    
+    //--------------------------------------------------------------
+
+    class Phone{
+        //静态属性
+        static name = '手机';
+        static change(){
+            console.log("我可以改变世界！");
+        }
+    }
+
+    let nokia = new Phone();
+    
+    console.log(nokia.name);
+    console.log(nokia.change());
+
+</script>
+
+</html>

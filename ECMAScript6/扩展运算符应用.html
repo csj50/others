@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>扩展运算符应用</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+<script>
+    //1. 数组的合并
+    const kuaizi = ['小王','小肖'];
+    const fenghuang = ['小曾','小玲'];
+
+    //ES5写法
+    const zuixuan = kuaizi.concat(fenghuang);
+    console.log(zuixuan);
+
+    //ES6写法
+    const zuixuan2 = [...kuaizi, ...fenghuang];
+    console.log(zuixuan2);
+
+    //2. 数组的克隆
+    const sanzhihua = ['E','G','M'];
+    const sanyecao = [...sanzhihua];
+    console.log(sanyecao);
+
+    //3. 将伪数组转为真正的数组
+    const divs = document.querySelectorAll('div');
+    console.log(divs);
+    const divArr = [...divs];
+    console.log(divArr);
+    
+</script>
+
+</html>

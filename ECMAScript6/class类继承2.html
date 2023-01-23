@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>class类继承2</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<h1 id="hid" class="hcls"><span>test</span></h1>
+</body>
+
+<script>
+    class Phone{
+        //构造方法
+        constructor(brand, price){
+            this.brand = brand;
+            this.price = price;
+        }
+
+        //父类的成员属性
+        callPhone(){
+            console.log("我可以打电话！");
+        }
+    }
+
+    //子类继承父类
+    class SmartPhone extends Phone{
+        //构造方法
+        constructor(brand, price, color, size){
+            //调用父类构造方法
+            super(brand, price);
+            this.color = color;
+            this.size = size;
+        }
+
+        photo(){
+            console.log("我可以拍照！");
+        }
+
+        playGame(){
+            console.log("我可以玩游戏！");
+        }
+
+        //重写父类的方法
+        callPhone(){
+            console.log("我可以视频通话！");
+        }
+    }
+
+    const xiaomi = new SmartPhone('小米', 799, '黑色', '4.7');
+    console.log(xiaomi);
+    
+    xiaomi.callPhone();
+    xiaomi.photo();
+    xiaomi.playGame();
+
+</script>
+
+</html>
